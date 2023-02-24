@@ -1,4 +1,4 @@
-#LAMP Setup
+# LAMP Setup
 
 A LAMP server includes Linux (the operating system I am using), Apache, MySQL, and PHP.
 
@@ -10,7 +10,7 @@ The LAMP stack for this class used Apache2.
 
 **PHP:** A programming langauge that interacts with databases
 
-##Tasks
+## Tasks
 
 All tasks were completed by following Professor Burns' instructions in our video
 lectures and Systems Librarianship webpage.
