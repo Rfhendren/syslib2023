@@ -76,7 +76,7 @@ IP address in the code with your Virtual Machine's IP address.**
 
 Code for the HTML page:
 
-	```
+```
 {
 <html>
 <head>
@@ -135,20 +135,22 @@ an intuition, of how an OPAC works, though.</p>
 
 ## Tasks
 
-1. Navigate to the correct directory in your Linux system by 
+All tasks were completed by following Professor Burns' instructions in our video lectures and Systems Librarianship webpage.
+
+- Navigate to the correct directory in your Linux system by 
 typing `/var/www/html`
-2. Open nano using `sudo nano` and use the HTML code to create a new
+- Open nano using `sudo nano` and use the HTML code to create a new
 file called "opacbb.html". Remember to replace the IP address with your 
 VM's IP address.
-3. Open nano using `sudo nano` and use the PHP code to create a new file 
+- Open nano using `sudo nano` and use the PHP code to create a new file 
 called "search.php".
-4. Navigate to your OPAC in the web browser to check if it worked. Use the 
+- Navigate to your OPAC in the web browser to check if it worked. Use the 
 VM's IP address and file name.
-	Example: 12.34.567.890/opacbb.html
-5. Add more records to your books table in MySQL.
-	-Connect to MySql with `mysql -u opacuser -p` (the password should
+	*Example: 12.34.567.890/opacbb.html*
+- Add more records to your books table in MySQL.
+-Connect to MySql with `mysql -u opacuser -p` (the password should
 be the one you set previously)
-	-run the insert command with data for new records
+-run the insert command with data for new records
 ```
 {
 insert into books
@@ -157,4 +159,5 @@ insert into books
 ('Zadie Smith', 'White Teeth', 'Hamish Hamilton', '2000-01-27');
 }
 ```
-6. Practice searching in the web broswer with the new data.
+- Practice searching in the web browser with the new data.
+
