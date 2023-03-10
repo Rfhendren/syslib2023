@@ -14,8 +14,7 @@ called "cataloging" with `sudo mkdir cataloging`.
 use nano to create the index.html file and save it there
 (`sudo nano index.html`). Add this code to the index.html file:
 
-```
-{
+```{
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,8 +42,7 @@ use nano to create the index.html file and save it there
         <input type="submit" value="Submit">
     </form>
 </body>
-</html>
-}
+</html>}
 ```
 
 ## Create a PHP script to communicate between the form in the web browser and our MySQL database
@@ -53,7 +51,6 @@ use nano to create the index.html file and save it there
 paste the following code into the file, then save the file.
 
 ```
-{
 <?php
 
 // Load MySQL credentials
@@ -89,8 +86,8 @@ $conn->close();
 
 echo "<p>Return to the cataloging page: <a href='http://11.111.111.111/cataloging/'>http://11.111.111.111/cataloging/</a></p>";
 ?>
-}
 ```
+
 ## Utilize a simple authorization method provided by Apache2 called htpasswd to add a layer of security to our cataloging module.
 
 1. Navigate to the `cd /etc/apache2` directory.
@@ -103,25 +100,21 @@ set your password.
 and look for the following code block:
 
 ```
-{
 <Directory /var/www/>
   Options Indexes FollowSymLinks
   AllowOverride None
   Require all granted
 </Directory>
-}
 ```
 
 Change the word *None* to *All* like so and save it.
 
 ```
-{
 <Directory /var/www/>
   Options Indexes FollowSymLinks
   AllowOverride All
   Require all granted
 </Directory>
-}
 ```
 
 4. Change to the cataloging directory with `cd /var/www/html/cataloging`. Create a
@@ -129,12 +122,10 @@ file with nano called .htaccess with `sudo nano .htaccess`. Add the following in
 to your .htaccess file and save it:
 
 ```
-{
 AuthType Basic
 AuthName "Authorization Required"
 AuthUserFile /etc/apache2/.htpasswd
 Require valid-user
-}
 ```
 
 5. Check that your configuration is correct with `apachectl configtest`. You should
