@@ -14,7 +14,7 @@ called "cataloging" with `sudo mkdir cataloging`.
 use nano to create the index.html file and save it there
 (`sudo nano index.html`). Add this code to the index.html file:
 
-```{
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +42,7 @@ use nano to create the index.html file and save it there
         <input type="submit" value="Submit">
     </form>
 </body>
-</html>}
+</html>
 ```
 
 ## Create a PHP script to communicate between the form in the web browser and our MySQL database
