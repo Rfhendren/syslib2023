@@ -1,4 +1,4 @@
-#Installing Wordpress
+# Installing Wordpress
 
 Since we are handling the installation of WordPress ourselves, we first need to 
 make sure that our systems meet the requirements needed to run the software.
