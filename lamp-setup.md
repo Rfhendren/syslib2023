@@ -39,6 +39,7 @@ I created this site using the Apache2 HTTP server.</p>
 </body>
 </html>
 ```
+
 	-access webpage in the internet browser using my server's public IP address (found in the Google Cloud console)
 
 4. Install and configure **PHP**
@@ -51,6 +52,7 @@ I created this site using the Apache2 HTTP server.</p>
 phpinfo();
 ?>
 ```
+
 	-Check the configuration with `acahectl configtest`. Then, reload and restart **Apache2** with `sudo systemctl reload apache2`
 and `sudo systemctl restart apache2`
 
@@ -69,7 +71,9 @@ copyright date not null,
 primary key (id)
 );
 ```
+
 	-create records to go into your table (with author, title, publisher, copyright) using the `insert` command
+
 ```
 insert into books (author, title, copyright) values
 ('Jennifer Egan', 'The Candy House', '2022-04-05'),
@@ -77,7 +81,9 @@ insert into books (author, title, copyright) values
 ('Lydia Millet', 'A Children\'s Bible', '2020-05-12'),
 ('Julia Phillips', 'Disappearing Earth', '2019-05-14');
 ```
+
 	-practice searching for records in the table with
+
 ```
 select author from books;
 select copyright from books;
@@ -107,7 +113,7 @@ select author from books order by copyright;
 6. Install **PHP** and **MySQL** Support
 	-Install with `sudo apt install php-mysql php-mysqli`,then restart **PHP** and **Apache2** with `sudo systemctl restart apache2` and `sudo systemctl restart mysql`
 	-create a login file in the `/var/www/html/` so that PHP can connect to mySQL. Also change the ownership of the file with `sudo touch login.php`, `sudo chmod 640 login.php`, and `sudo chown :www-data login.php`
-	-Open **login.php** with `sudo nano login.php` abd add credentials for the regular user you made before with 
+	-Open **login.php** with `sudo nano login.php` abd add credentials for the regular user you made before with** (Replace the X's with your password)** 
 ```
 <?php // login.php
 $db_hostname = "localhost";
@@ -116,7 +122,6 @@ $db_username = "opacuser";
 $db_password = "XXXXXXXXX";
 ?>
 ```
-**(Replace the X's with your password)**
 	-create a new php file using nano with `sudo nano opac.php` and insert the following code:
 ```
 <html>
@@ -178,7 +183,6 @@ mysqli_close($conn);
 </body>
 </html>
 ```
-
 	-test the syntax of the file after you save it with `sudo php -f login.php` and `sudo php -f index.php`
 
 7. Revisit Webpage
