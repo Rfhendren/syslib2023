@@ -9,9 +9,9 @@ as an authority value. The following notes explain how to do this.
 
 3. Click **Authorized values** under the **Basic Parameters** heading
 
-4. Find **LOC** (stands for location) and click on it.
+4. Find **LOC** (stands for location) and click on it
 
-5. Click on **New Authorized Value for LOC**. 
+5. Click on **New Authorized Value for LOC** 
 
 From here you can add the shelf locations that you want your library to have. After you have added them, you should be able to select
 them when adding/editing an item record.
