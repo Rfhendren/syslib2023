@@ -2,7 +2,7 @@
 
 This module will allow us to add records to our OPAC from 
 our web browser. The records are very simple like the records
-in the *books* table in MySQL on our machines (author, title, 
+in the **books** table in MySQL on our machines (author, title, 
 publisher, copyright).
 
 ## Create an HTML page that has a form for entering our data called index.html
@@ -11,8 +11,9 @@ publisher, copyright).
 called "cataloging" with `sudo mkdir cataloging`.
 
 2. Change directories to the new one you just made with `cd cataloging` and
-use nano to create the index.html file and save it there
-(`sudo nano index.html`). Add this code to the index.html file:
+use nano to create the index.html file and save it there with `sudo nano index.html`.
+
+3. Add this code to the index.html file:
 
 ```
 <!DOCTYPE html>
@@ -47,7 +48,7 @@ use nano to create the index.html file and save it there
 
 ## Create a PHP script to communicate between the form in the web browser and our MySQL database
 
-1. While in the same directory (cataloging), open nano with `sudo nano insert.php`
+1. While in the same directory (**cataloging**), open nano with `sudo nano insert.php`
 paste the following code into the file, then save the file.
 
 ```
@@ -88,15 +89,17 @@ echo "<p>Return to the cataloging page: <a href='http://11.111.111.111/catalogin
 ?>
 ```
 
-## Utilize a simple authorization method provided by Apache2 called htpasswd to add a layer of security to our cataloging module.
+## Utilize htpasswd to add a layer of security to our cataloging module.
 
-1. Navigate to the `cd /etc/apache2` directory.
+Htpasswd is a simple authorization method provided by Apache2 that adds a layer of security.
+
+1. Navigate to the **apache2** directory with `cd /etc/apache2`.
 
 2. Create an authentication file using `sudo htpasswd -c /etc/apache2/.htpasswd libcat`.
-This sets the username to *libcat*, but you could set it to whatever you like. Then,
+This sets the username to **libcat**, but you could set it to whatever you like. Then,
 set your password.
 
-3. Next, open the apache2.conf file with `sudo nano /etc/apache2/apache2.conf`
+3. Next, open the **apache2.conf** file with `sudo nano /etc/apache2/apache2.conf`
 and look for the following code block:
 
 ```
@@ -107,7 +110,7 @@ and look for the following code block:
 </Directory>
 ```
 
-Change the word *None* to *All* like so and save it.
+Change the word **None** to **All** like so and save it.
 
 ```
 <Directory /var/www/>
@@ -117,9 +120,9 @@ Change the word *None* to *All* like so and save it.
 </Directory>
 ```
 
-4. Change to the cataloging directory with `cd /var/www/html/cataloging`. Create a
+4. Change to the **cataloging** directory with `cd /var/www/html/cataloging`. Create a
 file with nano called .htaccess with `sudo nano .htaccess`. Add the following information
-to your .htaccess file and save it:
+to your file and save it:
 
 ```
 AuthType Basic
@@ -129,11 +132,11 @@ Require valid-user
 ```
 
 5. Check that your configuration is correct with `apachectl configtest`. You should
-see the message *Syntax OK* if you did everything correctly. Restart Apache2 with 
+see the message **Syntax OK** if you did everything correctly. Restart Apache2 with 
 `sudo systemctl restart apache2` and then check its status with `systemctl status apache2`.
 
 6. Visit your cataloging module in your web browser. You can reach this by entering your 
-*IP address/cataloging* into the address bar. You should be prompted to sign in with the
+**VM's IP address/cataloging** into the address bar. You should be prompted to sign in with the
 credentials you previously set with htpasswd.
 
 7. Add some records to your OPAC using the new form!
