@@ -25,6 +25,7 @@ lectures and the Systems Librarianship webpage.
 	-create an html file using nano with `sudo nano index.html`
 	-insert the following code into the **index.html** file or create your own code
 ```
+
 <html>
 <head>
 <title>My first web page using Apache2</title>
@@ -48,6 +49,7 @@ I created this site using the Apache2 HTTP server.</p>
 	-create a php file using nano with `sudo nano index.php`
 	-configure **Apache2** to default to the php file we created. Open the php file and inser the following text:
 ```
+
 <?php
 phpinfo();
 ?>
@@ -63,6 +65,7 @@ and `sudo systemctl restart apache2`
 	-create a practice database with `create database opacdb;` and grant all privileges on it to the user you just created with `grant all privileges on opacdb.* to 'opacuser'@'localhost';`
 	-create a table within that database with 
 ```
+
 create table books (
 id int unsigned not null auto_increment,
 author varchar(150) not null,
@@ -75,6 +78,7 @@ primary key (id)
 	-create records to go into your table (with author, title, publisher, copyright) using the `insert` command
 
 ```
+
 insert into books (author, title, copyright) values
 ('Jennifer Egan', 'The Candy House', '2022-04-05'),
 ('Imbolo Mbue', 'How Beautiful We Were', '2021-03-09'),
@@ -85,6 +89,7 @@ insert into books (author, title, copyright) values
 	-practice searching for records in the table with
 
 ```
+
 select author from books;
 select copyright from books;
 select author, title from books;
@@ -115,6 +120,7 @@ select author from books order by copyright;
 	-create a login file in the `/var/www/html/` so that PHP can connect to mySQL. Also change the ownership of the file with `sudo touch login.php`, `sudo chmod 640 login.php`, and `sudo chown :www-data login.php`
 	-Open **login.php** with `sudo nano login.php` abd add credentials for the regular user you made before with** (Replace the X's with your password)** 
 ```
+
 <?php // login.php
 $db_hostname = "localhost";
 $db_database = "opacdb";
@@ -124,6 +130,7 @@ $db_password = "XXXXXXXXX";
 ```
 	-create a new php file using nano with `sudo nano opac.php` and insert the following code:
 ```
+
 <html>
 <head>
 <title>MySQL Server Example</title>
