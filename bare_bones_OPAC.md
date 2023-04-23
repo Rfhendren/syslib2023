@@ -3,8 +3,8 @@
 Our bare bones OPAC will need an HTML page and a PHP script
 to function.
 
-**PHP, a programming language that communicates with our 
-HTTP server (Apache2), is used to search our OPAC.**
+**PHP**, a programming language that communicates with our 
+**HTTP server (Apache2)**, is used to search our OPAC.
 
 Code for the PHP script:
 
@@ -70,9 +70,9 @@ echo "<p>Return to search page: <a href='http://11.111.222.222/opacbb.php'>http:
 }
 ```
 
-**The HTML page we created can be displayed in a web browser
+The HTML page we created can be displayed in a web browser
 and contains a place to enter a search query. You will need to replace the
-IP address in the code with your Virtual Machine's IP address.**
+**IP address** in the code with your **Virtual Machine's IP address.**
 
 Code for the HTML page:
 
@@ -136,9 +136,7 @@ an intuition, of how an OPAC works, though.</p>
 ## Tasks
 
 All tasks were completed by following Professor Burns' instructions in our video lectures and Systems Librarianship webpage.
-
-- Navigate to the correct directory in your Linux system by 
-typing `/var/www/html`
+- Navigate to the correct directory in your Linux system by typing `/var/www/html`
 - Open nano using `sudo nano` and use the HTML code to create a new
 file called "opacbb.html". Remember to replace the IP address with your 
 VM's IP address.
@@ -146,7 +144,7 @@ VM's IP address.
 called "search.php".
 - Navigate to your OPAC in the web browser to check if it worked. Use the 
 VM's IP address and file name.
-	*Example: 12.34.567.890/opacbb.html*
+	**Example: 12.34.567.890/opacbb.html**
 - Add more records to your books table in MySQL.
 -Connect to MySql with `mysql -u opacuser -p` (the password should
 be the one you set previously)
@@ -159,5 +157,5 @@ insert into books
 ('Zadie Smith', 'White Teeth', 'Hamish Hamilton', '2000-01-27');
 }
 ```
-- Practice searching in the web browser with the new data.
+- Practice searching in the web browser with the new data
 
