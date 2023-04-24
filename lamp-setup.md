@@ -24,6 +24,7 @@ lectures and the Systems Librarianship webpage.
 	-install w3m with `sudo apt install w3,`
 	-create an html file using nano with `sudo nano index.html`
 	-insert the following code into the **index.html** file or create your own code
+
 ```
 
 <html>
@@ -41,7 +42,7 @@ I created this site using the Apache2 HTTP server.</p>
 </html>
 ```
 
-	-access webpage in the internet browser using my server's public IP address (found in the Google Cloud console)
+-access webpage in the internet browser using my server's public IP address (found in the Google Cloud console)
 
 4. Install and configure **PHP**
 	-Install **PHP** and an additional package that creates a connection between **PHP** and **Apache2** with `sudo apt install php libapache2-mod-php`.
@@ -53,9 +54,10 @@ I created this site using the Apache2 HTTP server.</p>
 <?php
 phpinfo();
 ?>
+
 ```
 
-	-Check the configuration with `acahectl configtest`. Then, reload and restart **Apache2** with `sudo systemctl reload apache2`
+-Check the configuration with `acahectl configtest`. Then, reload and restart **Apache2** with `sudo systemctl reload apache2`
 and `sudo systemctl restart apache2`
 
 5.  Install **MySQL**
@@ -64,6 +66,7 @@ and `sudo systemctl restart apache2`
 	-exit out of the root user status and create a regular user account for **MySQL** with `create user 'opacuser'@'localhost' identified by 'XXXXXXXXX';` **(Replace X's with your password)**
 	-create a practice database with `create database opacdb;` and grant all privileges on it to the user you just created with `grant all privileges on opacdb.* to 'opacuser'@'localhost';`
 	-create a table within that database with 
+
 ```
 
 create table books (
@@ -73,9 +76,10 @@ title varchar(150) not null,
 copyright date not null,
 primary key (id)
 );
+
 ```
 
-	-create records to go into your table (with author, title, publisher, copyright) using the `insert` command
+-create records to go into your table (with author, title, publisher, copyright) using the `insert` command
 
 ```
 
@@ -86,7 +90,7 @@ insert into books (author, title, copyright) values
 ('Julia Phillips', 'Disappearing Earth', '2019-05-14');
 ```
 
-	-practice searching for records in the table with
+-practice searching for records in the table with
 
 ```
 
@@ -113,6 +117,7 @@ select * from books;
 select author, publisher from books where copyright < '2011-01-01';
 select author from books order by copyright;
 \q
+
 ```
 
 6. Install **PHP** and **MySQL** Support
@@ -127,8 +132,11 @@ $db_database = "opacdb";
 $db_username = "opacuser";
 $db_password = "XXXXXXXXX";
 ?>
+
 ```
-	-create a new php file using nano with `sudo nano opac.php` and insert the following code:
+
+-create a new php file using nano with `sudo nano opac.php` and insert the following code:
+
 ```
 
 <html>
@@ -190,7 +198,8 @@ mysqli_close($conn);
 </body>
 </html>
 ```
-	-test the syntax of the file after you save it with `sudo php -f login.php` and `sudo php -f index.php`
+
+-test the syntax of the file after you save it with `sudo php -f login.php` and `sudo php -f index.php`
 
 7. Revisit Webpage
 
